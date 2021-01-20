@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  Home:
+MyHealthCalculator is a free application wherein a person can check and monitor his/her daily calorie intake using a calorie calculator. A calorie calculator tracks a person’s TDEE or Total Daily Energy Expenditure, it can help you in determining how many calories you should eat a day - or what your starting point is if you want to gain, lose or maintain your current weight. 
+Services: Free Calorie Calculator 
+
+Source: <a href="https://www.omnicalculator.com/health/calorie">https://www.omnicalculator.com/health/calorie</a>
+<ion-item>
+  <ion-label color="dark"> Gender: </ion-label>
+  <ion-select interface="popover" [(ngModel)]="gender">
+    <ion-option value="m">Male</ion-option>
+    <ion-option valaue="f">Female</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>Height(in cm): </ion-label>
+  <ion-input type="number"[(ngModel)] = "height"> </ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Weight(in kg): </ion-label>
+  <ion-input type="number"[(ngModel)] = "weight"> </ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Age: </ion-label>
+  <ion-input type="number"[(ngModel)] = "age"> </ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label color="dark"> ActivityLevel: </ion-label>
+  <ion-select interface="popover" [(ngModel)]="ActivityLevel">
+    <ion-option value="1">Little</ion-option>
+    <ion-option value="2">Light</ion-option>
+    <ion-option value="3">Moderate</ion-option>
+    <ion-option value="4">Hard</ion-option>
+    <ion-option value="5">VeryHard</ion-option>
+    <ion-option value="6">Professional</ion-option>
+
+  </ion-select>
+</ion-item>
+<button ion-button color="secondary" (click) ="calculateTHEDCI()">
+  Calculate
+</button>
+
+<ion-item *ngIf="theDCI">
+  <h2> Your Daily Calorie Intake is: {{theDCI}}k/cal per day <code> ({{theDCI}}) </code></h2>
+</ion-item>
+</ion-content>
